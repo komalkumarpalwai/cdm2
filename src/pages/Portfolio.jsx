@@ -1,71 +1,56 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import React from 'react';
 
 const projects = [
   {
-    title: 'Fashion E-commerce Site',
-    description: 'A responsive online store built with MERN stack featuring user login, cart, and admin dashboard.',
-    image: 'https://images.unsplash.com/photo-1522199755839-a2bacb67c546',
+    name: 'Knowvity',
+    tagline: 'Make Your Career Right Now in Coding',
+    description:
+      "Confused about which course to take? We’ve got you covered! Browse courses and discover the best option for you. Knowvity is our effort to teach skills, coding, and techniques in a short time that took years to master.",
+    url: 'https://www.knowvity.com/',
   },
   {
-    title: 'Restaurant Landing Page',
-    description: 'Single-page site with animations, menu sections, and reservation form for a local restaurant.',
-    image: 'https://images.unsplash.com/photo-1555992336-cbf8f3b4a964',
+    name: 'Radhika Rajpurohit Designer Studio',
+    tagline: 'Shopping Platform',
+    description:
+      'Elegant and bold fashion designer brand built with premium e-commerce experience in mind.',
+    url: 'https://radhikarajpurohit.com/',
   },
   {
-    title: 'Educational Platform',
-    description: 'Full-stack LMS platform with course enrollment, admin panel, and student dashboard.',
-    image: 'https://images.unsplash.com/photo-1584697964403-362dc51b8331',
+    name: 'Vijaya Makeover',
+    tagline: 'Beauty & Bridal Makeover Services',
+    description:
+      'A full-fledged beauty salon and bridal makeover service website with bookings, galleries, and service listings.',
+    url: 'https://www.vijayaamakeovers.com/',
   },
-  {
-    title: 'Beauty Makeover Studio',
-    description: 'A modern services and booking website for a makeover brand with gallery and pricing pages.',
-    image: 'https://images.unsplash.com/photo-1559628233-6534d07e8f49',
-  },
+  // Add more project items here with same structure as needed
 ];
 
-export default function Portfolio() {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
-
+export default function PortfolioPage() {
   return (
-    <div className="font-[Poppins] bg-white text-[#1E1E1E] py-16 px-4">
-      <h1 className="text-4xl md:text-5xl text-center font-bold text-[#0056D2] mb-12" data-aos="fade-up">
+    <div className="bg-white text-[#1E1E1E] py-20 px-4 font-[Poppins]">
+      <h1 className="text-4xl md:text-5xl font-bold text-[#0056D2] text-center mb-12">
         Our Portfolio
       </h1>
-      <div className="max-w-6xl mx-auto" data-aos="fade-up">
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={30}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000 }}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {projects.map((project, index) => (
-            <SwiperSlide key={index}>
-              <div className="bg-[#F4F4F4] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
-                <img src={project.image} alt={project.title} className="w-full h-56 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-2xl font-semibold text-[#0056D2] mb-2">{project.title}</h3>
-                  <p className="text-sm text-gray-700">{project.description}</p>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="border border-gray-200 rounded-xl shadow-md hover:shadow-lg p-8 bg-[#F9FAFB] transition duration-300"
+          >
+            <p className="text-sm text-gray-500 mb-2">Project</p>
+            <h2 className="text-2xl font-bold text-[#1E1E1E] mb-1">{project.name}</h2>
+            <p className="text-md text-[#0056D2] font-semibold mb-4">{project.tagline}</p>
+            <p className="text-gray-700 text-sm mb-6">{project.description}</p>
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white bg-[#0056D2] px-4 py-2 rounded-full text-sm font-medium hover:bg-[#0044aa]"
+            >
+              Visit Website ↗
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   );

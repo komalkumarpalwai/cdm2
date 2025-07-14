@@ -4,7 +4,7 @@ import { Stars, OrbitControls } from "@react-three/drei";
 import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import { Rocket, PhoneCall, Users } from "lucide-react";
-
+import HomeServices from "./HomeServices";
 export default function HeroSpace() {
   const glowRef = useRef();
   const heroSectionRef = useRef();
@@ -18,7 +18,7 @@ export default function HeroSpace() {
       name: "Alexis Fillon",
       role: "Senior Growth Marketing Manager",
       company: "piano",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      avatar: "https://static.vecteezy.com/system/resources/thumbnails/012/429/394/small_2x/casual-indian-business-man-working-on-desktop-computer-free-photo.jpg",
       message:
         "We wanted a solution that could serve the modern needs of in-person and virtual event experiences. We felt that we could find a single platform that could do everything at once, and that’s exactly what we found in Codeminds.",
     },
@@ -26,7 +26,7 @@ export default function HeroSpace() {
       name: "Knowvity",
       role: "E-learning Platform",
       company: "knowvity.com",
-      avatar: "https://img.icons8.com/color/96/graduation-cap--v1.png",
+      avatar: "https://thumbs.dreamstime.com/b/indian-girl-student-wear-headset-study-online-teacher-write-notes-happy-indian-girl-student-wear-headset-study-online-webcam-168424400.jpg",
       message:
         "Codeminds turned our vision into a high-converting course platform. Seamless design, smooth UX, and an incredible team!",
     },
@@ -34,7 +34,7 @@ export default function HeroSpace() {
       name: "Radhika Fashion",
       role: "Fashion Brand - Telangana",
       company: "radhikafashion.in",
-      avatar: "https://img.icons8.com/color/96/dress-front-view.png",
+      avatar: "https://img.freepik.com/premium-photo/beautiful-fashion-manager-woman-fashionable-stylish-clothes-with-black-blazer-white-shirt-white-background-studio-looking-camera_338491-24160.jpg",
       message:
         "Award-winning website design that helped us reach fashion-forward audiences across Telangana. Truly outstanding!",
     },
@@ -42,7 +42,7 @@ export default function HeroSpace() {
       name: "Vijaya Makeover",
       role: "Makeover Studio",
       company: "vijayamakeovers.com",
-      avatar: "https://img.icons8.com/color/96/makeup-brush.png",
+      avatar: "https://i.pinimg.com/736x/94/06/00/94060008c7f477fcb8345b64777d7fbf.jpg",
       message:
         "Elegant, responsive and fast. Our makeover studio finally has a digital presence that matches our offline charm!",
     },
@@ -187,7 +187,7 @@ export default function HeroSpace() {
           </div>
         </div>
       </section>
-
+  <HomeServices />
       {/* CTA Section */}
       <section className="relative py-20 bg-gradient-to-br from-blue-800 to-[#0056D2] font-[Poppins] overflow-hidden">
         <div
